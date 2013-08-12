@@ -1,0 +1,13 @@
+A C++ implementation of Logistic Regression.
+the book MLAPP(http://www.cs.ubc.ca/~murphyk/MLbook/) is recommended.
+this program depends on liblbfgs(https://github.com/chokkan/liblbfgs).
+
+compile:
+g++ -O3 -o lr_train code/common_functions.cpp code/dummy_convertor.cpp code/logistic_regression.cpp code/train.cpp
+g++ -O3 -o lr_predict code/common_functions.cpp code/dummy_convertor.cpp code/logistic_regression.cpp code/predict.cpp
+
+comments:
+1. -O3 is recommended when the dataset is large
+2. if the g++ cannot find lbfgs lib, your can do it yourself: g++ -O3 -o lr_train code/common_functions.cpp code/dummy_convertor.cpp code/logistic_regression.cpp code/train.cpp /usr/local/lib/liblbfgs.a
+3. the data formate: first column is the label(0/1), other columns are features(formate is feature_name:feature_value), please see the data/sample_train.tab and data/sample_test.tab
+4. the conf/dummy.conf is configure for dummy variables index when map it to a array.
